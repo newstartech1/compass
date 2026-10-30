@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#111827" />
+    <title>Compass — Project Intake</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Compass home">
+          <span class="brand-mark" aria-hidden="true">✦</span>
+          <span>compass</span>
+        </a>
+        <div class="status" id="api-status" aria-live="polite">
+          <span class="status-dot"></span>
+          Checking API
+        </div>
+      </header>
+
+      <section class="hero intake-hero" aria-labelledby="page-title">
+        <p class="eyebrow">PROJECT NAVIGATOR</p>
+        <h1 id="page-title">Tell us what<br /><em>you’re building.</em></h1>
+        <p class="intro">Navigate project decisions with confidence. Compass helps builders and innovation teams evaluate ideas, identify risks and assumptions, choose the most viable direction, and build smarter through structured AI reasoning.</p>
+      </section>
+
+      <section class="intake-card" aria-labelledby="intake-title">
+        <div class="form-heading">
+          <div>
+            <p class="form-kicker">START HERE</p>
+            <h2 id="intake-title">Project intake</h2>
+          </div>
+          <span class="required-note">* Required fields</span>
+        </div>
+        <form id="project-intake">
+          <div class="form-grid">
+            <label class="field field-wide" for="project-idea">Project idea <span>*</span>
+              <textarea id="project-idea" name="idea" rows="4" required placeholder="What are you building? Describe the problem, audience, and your early idea."></textarea>
+            </label>
+            <label class="field" for="category">Category <span>*</span>
+              <select id="category" name="category" required>
+                <option value="" selected disabled>Select a category</option>
+                <option>AI & productivity</option><option>Developer tools</option><option>Climate & impact</option><option>Education</option><option>Health & wellbeing</option><option>Other</option>
+              </select>
+            </label>
+            <label class="field" for="available-time">Available time <span>*</span>
+              <select id="available-time" name="availableTime" required>
+                <option value="" selected disabled>Choose your timeline</option>
+                <option>Under 4 hours</option><option>4–12 hours</option><option>1–2 days</option><option>3+ days</option>
+              </select>
+            </label>
+            <label class="field" for="team-size">Team size
+              <select id="team-size" name="teamSize"><option>Just me</option><option>2 people</option><option>3–4 people</option><option>5+ people</option></select>
+            </label>
+            <label class="field" for="skills">Team skills
+              <input id="skills" name="skills" type="text" placeholder="e.g. design, Python, product" />
+            </label>
+            <label class="field field-wide" for="technologies">Technologies you can use
+              <input id="technologies" name="technologies" type="text" placeholder="e.g. Gemini API, React, Figma, Supabase" />
+            </label>
+            <label class="field" for="constraints">Constraints
+              <textarea id="constraints" name="constraints" rows="3" placeholder="Budget, data access, scope, or other limits"></textarea>
+            </label>
+            <label class="field" for="goals">What would success look like?
+              <textarea id="goals" name="goals" rows="3" placeholder="Your ideal hackathon outcome"></textarea>
+            </label>
+          </div>
+          <div class="form-footer">
+            <p>Compass turns your inputs into a scoped plan, risks, and a smart next move.</p>
+            <button id="analyze-button" type="submit">Analyze Project <span aria-hidden="true">→</span></button>
+          </div>
+        </form>
+      </section>
+      <p class="response" id="response" aria-live="polite"></p>
+      <section class="analysis-results" id="analysis-results" hidden aria-live="polite" aria-label="Project analysis"></section>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>
