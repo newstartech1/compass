@@ -1,4 +1,4 @@
-const apiBaseUrl = "http://127.0.0.1:8000";
+﻿const apiBaseUrl = "https://compass-api-eta.vercel.app";
 const status = document.querySelector("#api-status");
 const response = document.querySelector("#response");
 const results = document.querySelector("#analysis-results");
@@ -77,8 +77,9 @@ document.querySelector("#project-intake").addEventListener("submit", async (even
     response.textContent = error.message || "Unable to analyze this project. Please try again.";
   } finally {
     button.disabled = false;
-    button.innerHTML = 'Analyze Project <span aria-hidden="true">→</span>';
+    button.innerHTML = 'Analyze Project <span aria-hidden="true">â†’</span>';
   }
 });
 
 checkApi();
+
